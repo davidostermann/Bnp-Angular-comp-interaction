@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
+  constructor() {
+    this.selectedUser = this.users[0];
+  }
+  selectedUser: User;
   users = [
     {
       id: 0,
@@ -26,5 +30,4 @@ export class UserService {
       jobTitle: 'Dynamic Markets Planner'
     }
   ];
-
 }

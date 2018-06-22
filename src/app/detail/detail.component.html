@@ -1,3 +1,5 @@
-<p>
-  detail works!
-</p>
+<div *ngIf="userService.selectedUser">
+  <h1>{{ user.name }}</h1>
+  <h1>{{ user.jobTitle }}</h1>
+  <img [src]="user.image" alt="">
+</div>

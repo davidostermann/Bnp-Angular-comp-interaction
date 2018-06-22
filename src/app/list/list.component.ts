@@ -1,5 +1,6 @@
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +17,8 @@ export class ListComponent implements OnInit {
     // le composant est prêt !
     this.users = this.userService.users;
   }
-  selectUser() {
-
+  selectUser(u: User, e: MouseEvent) {
+    e.preventDefault();
+    this.userService.selectedUser = u;
   }
 }
